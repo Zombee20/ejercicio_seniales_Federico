@@ -1,5 +1,10 @@
 extends TextureButton
 
+@onready var BlockRed = preload("res://scenes/Blocks/Red/BlockRed.tscn")
 
+func generate_block():
+	var instance = BlockRed.instantiate()
+	add_child(instance)
+	
 func _on_button_down() -> void:
-	pass # Replace with function body.
+	generate_block()
